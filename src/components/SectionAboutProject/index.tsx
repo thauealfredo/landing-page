@@ -23,6 +23,7 @@ const SectionAboutProject = ({
 
         <div>
           <Heading>{title}</Heading>
+          {/*  para usar formatação do rich text */}
           <S.Text dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </S.Container>
