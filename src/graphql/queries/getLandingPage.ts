@@ -89,6 +89,49 @@ const GET_LANDING_PAGE = gql`
     }
   }
 
+  fragment sectionAboutUs on LandingPage {
+    aboutUs: sectionAboutUs {
+      title
+      authors {
+        photo {
+          ...imageData
+        }
+        name
+        role
+        socialLinks {
+          title
+          url
+        }
+        description
+      }
+    }
+  }
+
+  fragment sectionReview on LandingPage {
+    sectionReview {
+      title
+      reviews {
+        id
+        photo {
+          ...imageData
+        }
+        name
+        text
+      }
+    }
+  }
+
+  fragment sectionFAQ on LandingPage {
+    sectionFaq {
+      title
+      questions {
+        id
+        question
+        answer
+      }
+    }
+  }
+
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
@@ -99,6 +142,9 @@ const GET_LANDING_PAGE = gql`
       ...sectionModules
       ...sectionAgenda
       ...pricingBox
+      ...sectionAboutUs
+      ...sectionReview
+      ...sectionFAQ
     }
   }
 `

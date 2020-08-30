@@ -1,8 +1,8 @@
-export type ImageData = {
+export type Image = {
   alternativeText: string
   url: string
 }
-
+//#region Arrays
 export type TechIcon = {
   title: string
   icon: {
@@ -16,9 +16,37 @@ export type Module = {
   description: string
 }
 
-export type LogoProps = {
-  image: ImageData
+export type SocialLink = {
+  title: string
+  url: string
 }
+
+export type Author = {
+  photo: Image
+  name: string
+  role: string
+  socialLinks: SocialLink[]
+  description: string
+}
+
+export type Review = {
+  id: number
+  photo: {
+    url: string
+  }
+  name: string
+  text: string
+}
+
+export type Question = {
+  id: number
+  question: string
+  answer: string
+}
+
+//#endregion
+
+export type LogoProps = Image
 
 export type HeaderProps = {
   title: string
@@ -27,13 +55,13 @@ export type HeaderProps = {
     label: string
     url: string
   }
-  image: ImageData
+  image: Image
 }
 
 export type AboutProjectProps = {
   title: string
   description: string
-  image: ImageData
+  image: Image
 }
 
 export type SectionTechProps = {
@@ -67,6 +95,21 @@ export type PricingBoxProps = {
   }
 }
 
+export type AboutUsProps = {
+  title: string
+  authors: Author[]
+}
+
+export type SectionReviewProps = {
+  title: string
+  reviews: Review[]
+}
+
+export type SectionFaqProps = {
+  title: string
+  questions: Question[]
+}
+
 export type LandingPageProps = {
   logo: LogoProps
   header: HeaderProps
@@ -76,4 +119,7 @@ export type LandingPageProps = {
   sectionModules: SectionModulesProps
   sectionAgenda: SectionAgendaProps
   pricingBox: PricingBoxProps
+  aboutUs: AboutUsProps
+  sectionReview: SectionReviewProps
+  sectionFaq: SectionFaqProps
 }

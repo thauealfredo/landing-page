@@ -26,7 +26,10 @@ const Index = ({
   sectionConcepts,
   sectionModules,
   sectionAgenda,
-  pricingBox
+  pricingBox,
+  aboutUs,
+  sectionReview,
+  sectionFaq
 }: LandingPageProps) => (
   <>
     <SectionHero logo={logo} header={header} />
@@ -36,9 +39,9 @@ const Index = ({
     <SectionModules {...sectionModules} />
     <SectionAgenda {...sectionAgenda} />
     <PricingBox {...pricingBox} />
-    <SectionAboutUs />
-    <SectionReviews />
-    <SectionFaq />
+    <SectionAboutUs {...aboutUs} />
+    <SectionReviews {...sectionReview} />
+    <SectionFaq {...sectionFaq} />
     <Footer />
     <JsonSchema />
   </>
