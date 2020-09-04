@@ -129,6 +129,16 @@ const GET_LANDING_PAGE = gql`
         question
         answer
       }
+      extraQuestion {
+        question
+        answer
+      }
+    }
+  }
+
+  fragment footer on LandingPage {
+    footer {
+      text
     }
   }
 
@@ -145,6 +155,7 @@ const GET_LANDING_PAGE = gql`
       ...sectionAboutUs
       ...sectionReview
       ...sectionFAQ
+      ...footer
     }
   }
 `

@@ -6,7 +6,7 @@ import Heading from 'components/Heading'
 import * as S from './styles'
 import { SectionFaqProps } from 'types/api'
 
-const SectionFaq = ({ title, questions }: SectionFaqProps) => (
+const SectionFaq = ({ title, questions, extraQuestion }: SectionFaqProps) => (
   <S.Wrapper>
     <S.Content>
       <Container>
@@ -22,25 +22,8 @@ const SectionFaq = ({ title, questions }: SectionFaqProps) => (
         </S.Questions>
 
         <S.ExtraQuestion>
-          <Heading lineBottom>Eu tenho outra dúvida!</Heading>
-          <p>
-            Sem problemas! Você pode acessar qualquer uma das{' '}
-            <a
-              href="https://willianjusten.com.br/about"
-              target="_blank"
-              rel="noreferrer"
-            >
-              minhas redes sociais
-            </a>{' '}
-            ou entrar no{' '}
-            <a
-              href="https://slack-willianjusten.herokuapp.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              slack do nosso curso.
-            </a>
-          </p>
+          <Heading lineBottom>{extraQuestion.question}</Heading>
+          <div dangerouslySetInnerHTML={{ __html: extraQuestion.answer }} />
         </S.ExtraQuestion>
       </Container>
     </S.Content>
